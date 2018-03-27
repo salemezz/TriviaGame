@@ -1,11 +1,11 @@
 body{
-	background: url('../images/cloudBG.jpeg');
 	font-family: 'Raleway', sans-serif;
 	font-size: 25px;
 }
 
 header{
 	margin-bottom: 20px;
+	text-align: center;
 }
 
 .btn-primary,.reset{
