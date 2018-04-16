@@ -1,3 +1,5 @@
+
+
 body{
 	font-family: 'Raleway', sans-serif;
 	font-size: 25px;
@@ -30,6 +32,26 @@ header{
 h2, #message, #finalMessage{
 	font-family: Sigmar One;
 }
+html {
+  font-size: 1rem;
+}
+
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 1.2rem;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 1.4rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 1.6rem;
+  }
 
 .thisChoice:hover{
 	background-color: #202364;

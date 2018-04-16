@@ -7,13 +7,15 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
   crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
   </head>
 
   <body>
-  <header>
-      <img src='assets/images/triviabanner.jpg' alt='headerImg' height=100%>
-  </header>
-  <div class='container'>
+  <div class='container img-fluid'>
+	<header>
+		<img class='img-fluid' src='assets/images/triviabanner.jpg' alt='headerImg' height=100%>
+	</header>
       <button class='btn btn-primary' id='startBtn'>Start</button>
       <!-- Question page -->
       <div id=timeLeft></div>
@@ -37,7 +39,7 @@ var triviaQuestions = [{
 	answer: 1
 },{
 	question: "What was the first console video game that allowed the game to be saved?",
-	answerList: ["Steve Jobs", "Metroid", "Mario", "Ledgend of Zelda"],
+	answerList: ["Contra", "Metroid", "Mario", "Ledgend of Zelda"],
 	answer: 3
 },{
 	question: "Created in 2009, what was the first decentralized cryptocurrency?",
