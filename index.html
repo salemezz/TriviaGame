@@ -1,200 +1,200 @@
-
 <!DOCTYPE html>
 <html>
-  <head>
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-  crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-  </head>
+<head>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	 crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	 crossorigin="anonymous"></script>
 
-  <body>
-  <div class='container img-fluid'>
-	<header>
-		<img class='img-fluid' src='assets/images/triviabanner.jpg' alt='headerImg' height=100%>
-	</header>
-      <button class='btn btn-primary' id='startBtn'>Start</button>
-      <!-- Question page -->
-      <div id=timeLeft></div>
-      <div id=currentQuestion></div>
-      <div class='question'></div>
-      <div class='answerList'></div>
-      <!-- Answer Page -->
-      <div id=message></div>
-	  <div id=correctedAnswer></div>
-      <!-- Scoreboard -->
-      <div id=finalMessage></div>
-      <div id=correctAnswers></div>
-      <div id=incorrectAnswers></div>
-      <div id=unanswered></div>
-      <div id='startOverBtn'></div>
-  </div>
-        <script>
-var triviaQuestions = [{
-	question: "Mark Zuckerberg was one of the founders of which social networking site?",
-	answerList: ["Myspace", "Facebook", "Linkedin", "Twitter"],
-	answer: 1
-},{
-	question: "What was the first console video game that allowed the game to be saved?",
-	answerList: ["Contra", "Metroid", "Mario", "Ledgend of Zelda"],
-	answer: 3
-},{
-	question: "Created in 2009, what was the first decentralized cryptocurrency?",
-	answerList: ["Bitcoin", "Litecoin", "Monero", "Ethereum"],
-	answer: 0
-},{
-	question: "What does the acronym USB stand for when referring to a computer port?",
-	answerList: ["Univeral Sync Bus", "Updating Speed Brick", "Universal Serial Bus", "Upload Sync Bus"],
-	answer: 2
-},{
-	question: "In 1975 an engineer created the first electronic camera while working for what company?",
-	answerList: ["Phillips", "Sony", "Nikon", "Kodak"],
-	answer: 3
-},{
-	question: "The first person shooter video game Doom was first released in what year?",
-	answerList: ["1991", "1989", "1997", "1993"],
-	answer: 3
-},{
-	question: "In what year was the first Apple computer released?",
-	answerList: ["1983", "1976", "1971", "1977"],
-	answer: 1
-},{
-	question: "The companies HP, Microsoft and Apple were all started in a what?",
-	answerList: ["Bedroom", "Office", "Garage", "Community Center"],
-	answer: 2
-},{
-	question: "Fonts that contain small decorative lines at the end of a stroke are known as what?",
-	answerList: ["Serif", "Ariel", "Sans", "New Roman"],
-	answer: 0
-},{
-	question: "In what year was the iPhone first released?",
-	answerList: ["2003", "2005", "2007", "2008"],
-	answer: 2
-}];
+</head>
 
-var currentQuestion; var correctAnswer; var incorrectAnswer; var unanswered; var seconds; var time; var answered; var userSelect;
-var messages = {
-	correct: "Yes, that's right!",
-	incorrect: "No, that's not it.",
-	endTime: "Out of time!",
-	finished: "Alright! Let's see how well you did."
-}
+<body>
+	<div class='container'>
+		<header>
+			<img class='img-fluid' src='assets/images/triviabanner.jpg' alt='headerImg' height=100%>
+		</header>
+		<button class='btn btn-primary' id='startBtn'>Start</button>
+		<!-- Question page -->
+		<div id=timeLeft></div>
+		<div id=currentQuestion></div>
+		<div class='question'></div>
+		<div class='answerList'></div>
+		<!-- Answer Page -->
+		<div id=message></div>
+		<div id=correctedAnswer></div>
+		<!-- Scoreboard -->
+		<div id=finalMessage></div>
+		<div id=correctAnswers></div>
+		<div id=incorrectAnswers></div>
+		<div id=unanswered></div>
+		<div id='startOverBtn'></div>
+	</div>
+	<script>
+		var triviaQuestions = [{
+			question: "Mark Zuckerberg was one of the founders of which social networking site?",
+			answerList: ["Myspace", "Facebook", "Linkedin", "Twitter"],
+			answer: 1
+		}, {
+			question: "What was the first console video game that allowed the game to be saved?",
+			answerList: ["Contra", "Metroid", "Mario", "Ledgend of Zelda"],
+			answer: 3
+		}, {
+			question: "Created in 2009, what was the first decentralized cryptocurrency?",
+			answerList: ["Bitcoin", "Litecoin", "Monero", "Ethereum"],
+			answer: 0
+		}, {
+			question: "What does the acronym USB stand for when referring to a computer port?",
+			answerList: ["Univeral Sync Bus", "Updating Speed Brick", "Universal Serial Bus", "Upload Sync Bus"],
+			answer: 2
+		}, {
+			question: "In 1975 an engineer created the first electronic camera while working for what company?",
+			answerList: ["Phillips", "Sony", "Nikon", "Kodak"],
+			answer: 3
+		}, {
+			question: "The first person shooter video game Doom was first released in what year?",
+			answerList: ["1991", "1989", "1997", "1993"],
+			answer: 3
+		}, {
+			question: "In what year was the first Apple computer released?",
+			answerList: ["1983", "1976", "1971", "1977"],
+			answer: 1
+		}, {
+			question: "The companies HP, Microsoft and Apple were all started in a what?",
+			answerList: ["Bedroom", "Office", "Garage", "Community Center"],
+			answer: 2
+		}, {
+			question: "Fonts that contain small decorative lines at the end of a stroke are known as what?",
+			answerList: ["Serif", "Ariel", "Sans", "New Roman"],
+			answer: 0
+		}, {
+			question: "In what year was the iPhone first released?",
+			answerList: ["2003", "2005", "2007", "2008"],
+			answer: 2
+		}];
 
-$('#startBtn').on('click', function(){
-	$(this).hide();
-	newGame();
-});
+		var currentQuestion; var correctAnswer; var incorrectAnswer; var unanswered; var seconds; var time; var answered; var userSelect;
+		var messages = {
+			correct: "Yes, that's right!",
+			incorrect: "No, that's not it.",
+			endTime: "Out of time!",
+			finished: "Alright! Let's see how well you did."
+		}
 
-$('#startOverBtn').on('click', function(){
-	$(this).hide();
-	newGame();
-});
+		$('#startBtn').on('click', function () {
+			$(this).hide();
+			newGame();
+		});
 
-function newGame(){
-	$('#finalMessage').empty();
-	$('#correctAnswers').empty();
-	$('#incorrectAnswers').empty();
-	$('#unanswered').empty();
-	currentQuestion = 0;
-	correctAnswer = 0;
-	incorrectAnswer = 0;
-	unanswered = 0;
-	newQuestion();
-}
+		$('#startOverBtn').on('click', function () {
+			$(this).hide();
+			newGame();
+		});
 
-function newQuestion(){
-	$('#message').empty();
-	$('#correctedAnswer').empty();
-	answered = true;
-	
-	//sets up new questions & answerList
-	$('#currentQuestion').html('Question #'+(currentQuestion+1)+'/'+triviaQuestions.length);
-	$('.question').html('<h2>' + triviaQuestions[currentQuestion].question + '</h2>');
-  $('.answerList').empty();
-  for(var i = 0; i < 4; i++){
-		var choices = $('<div>');
-		choices.text(triviaQuestions[currentQuestion].answerList[i]);
-    	choices.attr({'data-index': i });
-		choices.addClass('thisChoice');
-		$('.answerList').append(choices);
-	}
-	countdown();
-	//clicking an answer will pause the time and setup answerPage
-	$('.thisChoice').on('click',function(){
-    userSelect = $(this).data('index');
-	console.log(userSelect);
-		clearInterval(time);
-		answerPage();
-	});
-}
+		function newGame() {
+			$('#finalMessage').empty();
+			$('#correctAnswers').empty();
+			$('#incorrectAnswers').empty();
+			$('#unanswered').empty();
+			currentQuestion = 0;
+			correctAnswer = 0;
+			incorrectAnswer = 0;
+			unanswered = 0;
+			newQuestion();
+		}
 
-function countdown(){
-	seconds = 15;
-	$('#timeLeft').html('<h3>Time Remaining: ' + seconds + '</h3>');
-	answered = true;
-	//sets timer to go down
-	time = setInterval(showCountdown, 1000);
-}
+		function newQuestion() {
+			$('#message').empty();
+			$('#correctedAnswer').empty();
+			answered = true;
 
-function showCountdown(){
-	seconds--;
-	$('#timeLeft').html('<h3>Time Remaining: ' + seconds + '</h3>');
-	if(seconds < 1){
-		clearInterval(time);
-		answered = false;
-		answerPage();
-	}
-}
+			//sets up new questions & answerList
+			$('#currentQuestion').html('Question #' + (currentQuestion + 1) + '/' + triviaQuestions.length);
+			$('.question').html('<h2>' + triviaQuestions[currentQuestion].question + '</h2>');
+			$('.answerList').empty();
+			for (var i = 0; i < 4; i++) {
+				var choices = $('<div>');
+				choices.text(triviaQuestions[currentQuestion].answerList[i]);
+				choices.attr({ 'data-index': i });
+				choices.addClass('thisChoice');
+				$('.answerList').append(choices);
+			}
+			countdown();
+			//clicking an answer will pause the time and setup answerPage
+			$('.thisChoice').on('click', function () {
+				userSelect = $(this).data('index');
+				console.log(userSelect);
+				clearInterval(time);
+				answerPage();
+			});
+		}
 
-function answerPage(){
-	$('#currentQuestion').empty();
-	$('.thisChoice').empty(); //Clears question page
-	$('.question').empty();
+		function countdown() {
+			seconds = 15;
+			$('#timeLeft').html('<h3>Time Remaining: ' + seconds + '</h3>');
+			answered = true;
+			//sets timer to go down
+			time = setInterval(showCountdown, 1000);
+		}
 
-	var rightAnswerText = triviaQuestions[currentQuestion].answerList[triviaQuestions[currentQuestion].answer];
-	var rightAnswerIndex = triviaQuestions[currentQuestion].answer;
-	//checks to see correct, incorrect, or unanswered
-	if((userSelect == rightAnswerIndex) && (answered == true)){
-		correctAnswer++;
-		$('#message').html(messages.correct);
-	} else if((userSelect != rightAnswerIndex) && (answered == true)){
-		incorrectAnswer++;
-		$('#message').html(messages.incorrect);
-		$('#correctedAnswer').html('The correct answer was: ' + rightAnswerText);
-	} else{
-		unanswered++;
-		$('#message').html(messages.endTime);
-		$('#correctedAnswer').html('The correct answer was: ' + rightAnswerText);
-		answered = true;
-	}
-	
-	if(currentQuestion == (triviaQuestions.length-1)){
-		setTimeout(scoreboard, 5000)
-	} else{
-		currentQuestion++;
-		setTimeout(newQuestion, 5000);
-	}	
-}
+		function showCountdown() {
+			seconds--;
+			$('#timeLeft').html('<h3>Time Remaining: ' + seconds + '</h3>');
+			if (seconds < 1) {
+				clearInterval(time);
+				answered = false;
+				answerPage();
+			}
+		}
 
-function scoreboard(){
-	$('#timeLeft').empty();
-	$('#message').empty();
-	$('#correctedAnswer').empty();
+		function answerPage() {
+			$('#currentQuestion').empty();
+			$('.thisChoice').empty(); //Clears question page
+			$('.question').empty();
 
-	$('#finalMessage').html(messages.finished);
-	$('#correctAnswers').html("Correct Answers: " + correctAnswer);
-	$('#incorrectAnswers').html("Incorrect Answers: " + incorrectAnswer);
-	$('#unanswered').html("Unanswered: " + unanswered);
-	$('#startOverBtn').addClass('reset');
-	$('#startOverBtn').show();
-	$('#startOverBtn').html('Start Over?');
-}
+			var rightAnswerText = triviaQuestions[currentQuestion].answerList[triviaQuestions[currentQuestion].answer];
+			var rightAnswerIndex = triviaQuestions[currentQuestion].answer;
+			//checks to see correct, incorrect, or unanswered
+			if ((userSelect == rightAnswerIndex) && (answered == true)) {
+				correctAnswer++;
+				$('#message').html(messages.correct);
+			} else if ((userSelect != rightAnswerIndex) && (answered == true)) {
+				incorrectAnswer++;
+				$('#message').html(messages.incorrect);
+				$('#correctedAnswer').html('The correct answer was: ' + rightAnswerText);
+			} else {
+				unanswered++;
+				$('#message').html(messages.endTime);
+				$('#correctedAnswer').html('The correct answer was: ' + rightAnswerText);
+				answered = true;
+			}
 
-        </script>
-    </body>
+			if (currentQuestion == (triviaQuestions.length - 1)) {
+				setTimeout(scoreboard, 5000)
+			} else {
+				currentQuestion++;
+				setTimeout(newQuestion, 5000);
+			}
+		}
+
+		function scoreboard() {
+			$('#timeLeft').empty();
+			$('#message').empty();
+			$('#correctedAnswer').empty();
+
+			$('#finalMessage').html(messages.finished);
+			$('#correctAnswers').html("Correct Answers: " + correctAnswer);
+			$('#incorrectAnswers').html("Incorrect Answers: " + incorrectAnswer);
+			$('#unanswered').html("Unanswered: " + unanswered);
+			$('#startOverBtn').addClass('reset');
+			$('#startOverBtn').show();
+			$('#startOverBtn').html('Start Over?');
+		}
+
+	</script>
+</body>
+
 </html>
-
-
