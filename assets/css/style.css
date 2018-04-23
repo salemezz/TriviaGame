@@ -36,23 +36,6 @@ html {
   font-size: 1rem;
 }
 
-@include media-breakpoint-up(sm) {
-  html {
-    font-size: 1.2rem;
-  }
-}
-
-@include media-breakpoint-up(md) {
-  html {
-    font-size: 1.4rem;
-  }
-}
-
-@include media-breakpoint-up(lg) {
-  html {
-    font-size: 1.6rem;
-  }
-
 .thisChoice:hover {
 	background-color: #202364;
 	color: white;
@@ -61,12 +44,4 @@ html {
 
 #gif{
 	margin: 30px;
-}
-
-@media screen and (max-width:640px){
-	.container{
-		width: 500px;
-		margin-top: 200px;
-		size: 200%;
-	}	
 }
